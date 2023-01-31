@@ -9,19 +9,27 @@ import com.samsung.project.services.factory.ServiceEndpointFactory;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 import java.util.concurrent.Semaphore;
+import java.util.logging.Logger;
 
 public class ServiceRegistry {
     static ServiceRegistry instance = null;
+    private Logger log = Logger.getLogger(String.valueOf(this.getClass()));
 
     Set<String> registered_services = null;
     private Map<String, ServiceEndpointFactory<? extends ServiceEndpoint<InventoryItem>>> factories = null;
     HashMap<String, List<String>> params_to_services_map = null;
     private final Map<String, Semaphore> semaphores = new HashMap<>();
+    int bitMapMaxCount = 0;
+    private Map<Integer, String> service_bitmap;
+    private Map<String, ServiceBitMap> params_to_service_bitmap;
+    private String intersection_strategy = "Bitmap";
 
     private ServiceRegistry() {
         params_to_services_map = new HashMap<>();
         registered_services = new HashSet<>();
         factories = new HashMap<>();
+        service_bitmap = new HashMap<>();
+        params_to_service_bitmap = new HashMap<>();
     }
 
     public static ServiceRegistry getInstance() {
@@ -42,9 +50,13 @@ public class ServiceRegistry {
                 for (String p : params) {
                     if (!params_to_services_map.containsKey(p)) {
                         params_to_services_map.put(p, new ArrayList<>());
+                        params_to_service_bitmap.put(p, new ServiceBitMap());
                     }
                     params_to_services_map.get(p).add(service_id);
+                    params_to_service_bitmap.get(p).set(bitMapMaxCount);
                 }
+                service_bitmap.put(bitMapMaxCount, service_id);
+                bitMapMaxCount ++;
                 factories.put(service_id, factory);
                 semaphores.put(service_id, new Semaphore(service.getMaxConcurrentInvocations()));
             } else {
@@ -56,20 +68,19 @@ public class ServiceRegistry {
     }
 
     public List<ServiceEndpoint<InventoryItem>> getServicesForParams(Map<String, Object> parameters) throws InvocationException {
-        ArrayList<String> intersection = null;
+        List<String> intersection = null;
+
+        if (intersection_strategy == "Bitmap") {
+            intersection = BitMapDedupe.intersect(parameters,
+                    params_to_services_map,
+                    params_to_service_bitmap,
+                    service_bitmap);
+        } else {
+            intersection = ListIntersection.intersect(parameters,
+                    params_to_services_map);
+        }
+
         List<ServiceEndpoint<InventoryItem>> serviceEndpoints = new ArrayList<>();
-        for (String p : parameters.keySet()) {
-            List<String> list_of_serviceIds = params_to_services_map.get(p);
-            if (intersection == null) {
-                intersection = new ArrayList<>(list_of_serviceIds);
-            } else {
-                intersection.retainAll(list_of_serviceIds);
-            }
-        }
-        
-        if (intersection == null) {
-            throw new InvocationException("parameters sent have no supporting services", "SR002");
-        }
 
         for (String serviceId : intersection) {
             try {

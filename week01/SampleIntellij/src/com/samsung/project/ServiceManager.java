@@ -26,7 +26,7 @@ public class ServiceManager {
     }
 
     public List<InventoryItem> invoke(Map<String, Object> parameters) throws InterruptedException, ExecutionException, InvocationException {
-        log.info("Service Manager : received request");
+        log.info("Service Manager : received request " + System.currentTimeMillis());
         List<ServiceEndpoint<InventoryItem>> services = registry.getServicesForParams(parameters);
         List<InventoryItem> result_list = new ArrayList<>();
         List<Future<List<InventoryItem>>> invokeResults = new ArrayList<>();
@@ -42,7 +42,7 @@ public class ServiceManager {
             result_list.addAll(result);
         }
 
-        log.info("Service Manager : received response from all service endpoints");
+        log.info("Service Manager : received response from all service endpoints " + System.currentTimeMillis());
 
         return result_list;
     }
