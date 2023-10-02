@@ -49,7 +49,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/thangarajamohan/projects/JavaWorkout/week01/SampleIntellij&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;Debugger_Data_Views_Java&quot;
@@ -59,16 +59,25 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.samsung.project.data" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Upload">
+  <component name="RunManager" selected="Application.Reader">
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
     </configuration>
-    <configuration name="Upload" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Reader" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.samsung.project.data.RedisReader" />
+      <module name="SampleIntellij" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Upload" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.samsung.project.data.Upload" />
       <module name="SampleIntellij" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -83,6 +92,7 @@
       <module name="SampleIntellij" />
       <option name="PACKAGE_NAME" value="com.samsung.project" />
       <option name="MAIN_CLASS_NAME" value="com.samsung.project.LoadTest" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
@@ -93,6 +103,7 @@
       <module name="SampleIntellij" />
       <option name="PACKAGE_NAME" value="com.samsung.project" />
       <option name="MAIN_CLASS_NAME" value="com.samsung.project.ServiceManagerTest" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
@@ -106,9 +117,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Upload" />
+      <item itemvalue="Application.Reader" />
+      <item itemvalue="JUnit.LoadTest" />
+      <item itemvalue="JUnit.ServiceManagerTest" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Upload" />
         <item itemvalue="JUnit.LoadTest" />
         <item itemvalue="JUnit.ServiceManagerTest" />
       </list>

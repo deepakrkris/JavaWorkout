@@ -10,9 +10,11 @@ import java.util.List;
 public class HelloWorldController {
 
     private final EntityRepository repository;
+    private final BookRepository books;
 
-    public HelloWorldController(EntityRepository repository) {
+    public HelloWorldController(EntityRepository repository, BookRepository books) {
         this.repository = repository;
+        this.books = books;
     }
 
     @RequestMapping("/hello")
@@ -27,5 +29,10 @@ public class HelloWorldController {
     @GetMapping("/test")
     public List<InventoryEntity> getUsers() {
         return repository.findAll();
+    }
+
+    @GetMapping("/books")
+    public List<BookEntity> getBooks() {
+        return books.findAll();
     }
 }

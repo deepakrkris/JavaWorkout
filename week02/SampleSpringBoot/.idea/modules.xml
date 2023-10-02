@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SampleSpringBoot.iml" filepath="$PROJECT_DIR$/SampleSpringBoot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/redi2read.iml" filepath="$PROJECT_DIR$/redi2read.iml" />
     </modules>
   </component>
 </project>
