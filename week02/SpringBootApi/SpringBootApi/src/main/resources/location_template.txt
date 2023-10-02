@@ -1,0 +1,16 @@
+[
+  '{{repeat(30)}}',
+  {
+    index: '{{index()}}',
+    guid: '{{guid()}}',
+    isActive: '{{bool()}}',
+    address: '{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}',
+    about: '{{lorem(1, "paragraphs")}}',
+    registered: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}',
+    latitude: '{{floating(-90.000001, 90)}}',
+    longitude: '{{floating(-180.000001, 180)}}',
+    company: '{{company().toUpperCase()}}',
+    email: '{{firstName()}}.{{surname()}}@gmail.com',
+    phone: '+1 {{phone()}}'
+  }
+]
