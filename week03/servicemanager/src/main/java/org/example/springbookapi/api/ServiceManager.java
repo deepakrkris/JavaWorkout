@@ -5,7 +5,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
 import java.util.List;
@@ -16,8 +15,6 @@ public class ServiceManager {
     @RequestMapping(value = "/invoke", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity<Map<String, Object>> invoke(@RequestParam Map<String, Object> queryParams) throws InterruptedException {
-        RestTemplate restTemplate = new RestTemplate();
-
         Map<String, Object> response = new HashMap<>();
 
         List<ServiceClient> services = ServiceRegistry.getInstance().getServicesForParams(queryParams.keySet());

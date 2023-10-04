@@ -1,0 +1,19 @@
+[
+  '{{repeat(30)}}',
+  {
+    guid: '{{guid()}}',
+    customerName: '{{firstName()}} {{surname()}}',
+    category: "smartphones",
+    brand: '{{random("iphone", "samsung", "sony")}}',
+    model: function (rand) {
+      var model_map = {
+        iphone: ['plus', 'se'],
+        samsung: ['galaxy', 'notes'],
+        sony: ['M', 'K']
+      };
+      return this.brand + ' ' + model_map[this.brand][rand.integer(0, 1)] + ' ' + rand.integer(1, 2);
+    },
+    rating: '{{floating(6, 9.8, 1)}}',
+    comment: '{{random("excited", "ok", "manageable")}}'
+  }
+]

@@ -18,6 +18,7 @@ public class Sales {
     public String model;
 
     public int salesAmount;
+    public int sales;
 
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")

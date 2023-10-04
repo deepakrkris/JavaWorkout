@@ -2,6 +2,8 @@ package org.example.springbookapi.api;
 
 import org.example.springbookapi.entity.Sales;
 import org.example.springbookapi.entity.SalesRepository;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.JpaSort;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,6 +23,6 @@ public class SalesController {
     @GetMapping("/invokeSales")
     public List<Sales> invoke(@RequestParam Map<String, Object> params) {
         SearchSpecification<Sales> query = new SearchSpecification<>(params);
-        return salesRepository.findAll(query);
+        return salesRepository.findAll(query, JpaSort.by(Sort.Direction.ASC, "date"));
     }
 }

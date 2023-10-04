@@ -53,7 +53,7 @@ public class StartupCommand implements CommandLineRunner {
 
         Set<String> supportedParamsTestClient = new HashSet<>();
         //log.info("generating from " + (i/10));
-        for (int j = 1; j <= 100000; j++) {
+        for (int j = 1; j <= 130000; j++) {
             supportedParamsTestClient.add("mockParam" + j);
         }
 

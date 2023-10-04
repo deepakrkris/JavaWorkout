@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="299f85c5-a99e-469f-896a-6aa0952749f9" name="Changes" comment="" />
+    <list default="true" id="44bc5458-e56a-4b26-9fc5-d023f4224f4c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,25 +10,11 @@
   <component name="CompilerWorkspaceConfiguration">
     <option name="CLEAR_OUTPUT_DIRECTORY" value="false" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="FindBugs-IDEA-Workspace">
     <analyzeAfterCompile>true</analyzeAfterCompile>
     <toolWindowToFront>false</toolWindowToFront>
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="2LGNuxUYyZ48Ii9JsqQhdNrtOvt" />
+  <component name="ProjectId" id="2WG03dYPjbH82nmj8JiTS0ofRHh" />
   <component name="ProjectViewState">
     <option name="abbreviatePackageNames" value="true" />
     <option name="autoscrollFromSource" value="true" />
@@ -41,41 +24,28 @@
     <option name="showModules" value="false" />
     <option name="sortByType" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "jdk.selected.JAVA_MODULE": "11",
-    "last_opened_file_path": "/Users/thangarajamohan/projects/JavaWorkout/week02/SampleMaven/Sample",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.51609194",
-    "settings.editor.selected.configurable": "preferences.general"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/thangarajamohan/projects/JavaWorkout/week03&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.externalDependencies&quot;
   }
-}]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Sample" />
-      <recent name="$PROJECT_DIR$/src/main/resources" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="org.example" />
-    </key>
-  </component>
+}</component>
   <component name="RunManager">
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
     </configuration>
-    <configuration name="SampleMaven" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.example.Application" />
-      <module name="SampleMaven" />
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <configuration name="inventoryapi" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.example.springbookapi.SpringbookapiApplication" />
+      <module name="inventoryapi" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
